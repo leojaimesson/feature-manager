@@ -3,7 +3,7 @@ import {
   dataproviders,
   entrypoints,
   usecases,
-} from './application/config/nest-di';
+} from './application/config/NestDI';
 
 @Module({
   imports: [],
