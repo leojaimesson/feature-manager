@@ -1,6 +1,6 @@
 import { Feature } from 'src/domain/entity/Feature';
 import { CreateFeatureRequestDto } from '../entrypoint/dto/CreateFeatureRequestDto';
-import { UUIDImpl } from '../infra/adapter/impl/uuid';
+import { UUIDImpl } from '../adapter/implementation/uuid';
 
 export class CreateFeatureMapper {
   static async toEntity(dto: CreateFeatureRequestDto): Promise<Feature> {

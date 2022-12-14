@@ -1,6 +1,6 @@
 import { Project } from 'src/domain/entity/Project';
 import { CreateProjectRequestDto } from '../entrypoint/dto/CreateProjectRequestDto';
-import { UUIDImpl } from '../infra/adapter/impl/uuid';
+import { UUIDImpl } from '../adapter/implementation/uuid';
 
 export class CreateProjectMapper {
   static async toEntity(dto: CreateProjectRequestDto): Promise<Project> {
