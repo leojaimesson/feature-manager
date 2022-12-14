@@ -1,16 +1,13 @@
 import { PrismaService } from '../dataprovider/database/prisma/PrismaService';
-import { ResourceRepositoryImpl } from '../dataprovider/database/ResourceRepository';
-import { CreateResourceEntryPoint } from '../entrypoint/CreateResourceEntryPoint';
-import { RetrieveResourcesEntryPoint } from '../entrypoint/RetrieveResourcesEntryPoint';
-import { CreateResourceUsecaseImpl } from '../usecase/CreateResourceUsecase';
-import { RetrieveResourcesUsecaseImpl } from '../usecase/RetrieveResourcesUsecase';
+import { FeatureRepositoryImpl } from '../dataprovider/database/FeatureRepository';
+import { CreateFeatureEntryPoint } from '../entrypoint/CreateFeatureEntryPoint';
+import { RetrieveFeaturesEntryPoint } from '../entrypoint/RetrieveFeaturesEntryPoint';
+import { CreateFeatureUsecaseImpl } from '../usecase/CreateFeatureUsecase';
+import { RetrieveFeaturesUsecaseImpl } from '../usecase/RetrieveFeaturesUsecase';
 
 export const entrypoints = [
-  CreateResourceEntryPoint,
-  RetrieveResourcesEntryPoint,
+  CreateFeatureEntryPoint,
+  RetrieveFeaturesEntryPoint,
 ];
-export const dataproviders = [PrismaService, ResourceRepositoryImpl];
-export const usecases = [
-  CreateResourceUsecaseImpl,
-  RetrieveResourcesUsecaseImpl,
-];
+export const dataproviders = [PrismaService, FeatureRepositoryImpl];
+export const usecases = [CreateFeatureUsecaseImpl, RetrieveFeaturesUsecaseImpl];

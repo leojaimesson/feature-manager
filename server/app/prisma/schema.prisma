@@ -10,10 +10,19 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Resource {
-  id        Int      @id @default(autoincrement())
-  name      String
-  enable    Boolean
-  createdAt DateTime
-  updatedAt DateTime
+model Project {
+  id          String   @id
+  name        String
+  description String
+  createdAt   DateTime
+  updatedAt   DateTime
+}
+
+model Feature {
+  id          String   @id
+  name        String
+  description String
+  enable      Boolean
+  createdAt   DateTime
+  updatedAt   DateTime
 }

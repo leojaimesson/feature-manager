@@ -1,7 +1,8 @@
 -- CreateTable
-CREATE TABLE `Resource` (
-    `id` INTEGER NOT NULL AUTO_INCREMENT,
+CREATE TABLE `Feature` (
+    `id` VARCHAR(191) NOT NULL,
     `name` VARCHAR(191) NOT NULL,
+    `description` VARCHAR(191) NOT NULL,
     `enable` BOOLEAN NOT NULL,
     `createdAt` DATETIME(3) NOT NULL,
     `updatedAt` DATETIME(3) NOT NULL,
