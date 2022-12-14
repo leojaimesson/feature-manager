@@ -1,0 +1,11 @@
+POST http://localhost:3000/projects
+Content-Type: application/json
+
+{
+    "name": "TEST_PROJECT",
+    "description": "TEST DESCRIPTION"
+}
+###
+
+# GET http://localhost:3000/projects
+# Content-Type: application/json

@@ -1,4 +1,4 @@
-import { Feature } from './Feature';
+// import { Feature } from './Feature';
 
 export interface Project {
   id: string;
@@ -6,5 +6,5 @@ export interface Project {
   description: string;
   createdAt: Date;
   updatedAt: Date;
-  features: Feature[];
+  // features: Feature[];
 }

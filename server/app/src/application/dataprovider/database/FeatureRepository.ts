@@ -14,16 +14,6 @@ export class FeatureRepositoryImpl implements FeatureRepository {
   }
 
   async list(): Promise<Feature[]> {
-    const resources = await this.prismaService.feature.findMany();
-    return resources;
-    // return resources.map(
-    //   (resource): Resource =>
-    //     new Resource()
-    //       .setId(resource.id)
-    //       .setName(resource.name)
-    //       .setEnable(resource.enable)
-    //       .setCreatedAt(resource.createdAt)
-    //       .setUpdatedAt(resource.updatedAt),
-    // );
+    return await this.prismaService.feature.findMany();
   }
 }
