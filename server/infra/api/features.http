@@ -1,0 +1,13 @@
+POST http://localhost:3000/features
+Content-Type: application/json
+
+{
+    "name": "TEST_FLAG_2",
+    "description": "description",
+    "enable": true,
+    "projectId": "5deb4616-13dd-4e3a-a38f-1f911efe83c5"
+}
+###
+
+GET http://localhost:3000/features
+Content-Type: application/json

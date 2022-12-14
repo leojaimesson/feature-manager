@@ -7,9 +7,12 @@ import { PrismaService } from './prisma/PrismaService';
 export class FeatureRepositoryImpl implements FeatureRepository {
   constructor(private readonly prismaService: PrismaService) {}
 
-  async create(feature: Feature): Promise<void> {
+  async create(feature: Feature, projectId: string): Promise<void> {
     await this.prismaService.feature.create({
-      data: feature,
+      data: {
+        ...feature,
+        projectId,
+      },
     });
   }
 

@@ -11,11 +11,12 @@ datasource db {
 }
 
 model Project {
-  id          String   @id
+  id          String    @id
   name        String
   description String
   createdAt   DateTime
   updatedAt   DateTime
+  features    Feature[]
 }
 
 model Feature {
@@ -25,4 +26,6 @@ model Feature {
   enable      Boolean
   createdAt   DateTime
   updatedAt   DateTime
+  Project     Project? @relation(fields: [projectId], references: [id])
+  projectId   String?
 }

@@ -10,7 +10,7 @@ export class CreateFeatureUsecaseImpl implements CreateFeatureUsecase {
     @Inject(FeatureRepositoryImpl)
     private readonly featureRepository: FeatureRepository,
   ) {}
-  async execute(feature: Feature): Promise<void> {
-    this.featureRepository.create(feature);
+  async execute(feature: Feature, projectId: string): Promise<void> {
+    this.featureRepository.create(feature, projectId);
   }
 }

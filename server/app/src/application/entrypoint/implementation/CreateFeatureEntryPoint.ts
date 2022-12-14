@@ -16,6 +16,7 @@ export class CreateFeatureEntryPointImpl implements CreateFeatureEntryPoint {
   async execute(@Body() feature: CreateFeatureRequestDto): Promise<void> {
     await this.createFeatureUsecase.execute(
       await CreateFeatureMapper.toEntity(feature),
+      feature.projectId,
     );
   }
 }
