@@ -9,12 +9,15 @@ import { ProjectRepositoryImpl } from '../dataprovider/database/ProjectRepositor
 import { CreateProjectUsecaseImpl } from '../usecase/CreateProjectUsecase';
 import { RetrieveProjectsEntryPointImpl } from '../entrypoint/implementation/RetrieveProjectsEntryPoint';
 import { RetrieveProjectsUsecaseImpl } from '../usecase/RetrieveProjectsUsecase';
+import { RetrieveFeaturesByProjectEntryPointImpl } from '../entrypoint/implementation/RetrieveFeaturesByProjectEntryPoint';
+import { RetrieveFeaturesByProjectUsecaseImpl } from '../usecase/RetrieveFeaturesByProjectUsecase';
 
 export const entrypoints = [
   CreateFeatureEntryPointImpl,
   RetrieveFeaturesEntryPointImpl,
   CreateProjectEntryPointImpl,
   RetrieveProjectsEntryPointImpl,
+  RetrieveFeaturesByProjectEntryPointImpl,
 ];
 export const dataproviders = [
   PrismaService,
@@ -26,4 +29,5 @@ export const usecases = [
   RetrieveFeaturesUsecaseImpl,
   CreateProjectUsecaseImpl,
   RetrieveProjectsUsecaseImpl,
+  RetrieveFeaturesByProjectUsecaseImpl,
 ];

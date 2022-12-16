@@ -19,4 +19,12 @@ export class FeatureRepositoryImpl implements FeatureRepository {
   async list(): Promise<Feature[]> {
     return await this.prismaService.feature.findMany();
   }
+
+  async listByProject(projectId: string): Promise<Feature[]> {
+    return await this.prismaService.feature.findMany({
+      where: {
+        projectId,
+      },
+    });
+  }
 }
