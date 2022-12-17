@@ -12,7 +12,7 @@ import { RetrieveProjectsUsecaseImpl } from '../usecase/RetrieveProjectsUsecase'
 import { RetrieveFeaturesByProjectEntryPointImpl } from '../entrypoint/implementation/RetrieveFeaturesByProjectEntryPoint';
 import { RetrieveFeaturesByProjectUsecaseImpl } from '../usecase/RetrieveFeaturesByProjectUsecase';
 import { APP_INTERCEPTOR } from '@nestjs/core';
-import { HttpExceptionInterceptor } from './HttpExceptionInterceptor';
+import { ErrorInterceptor } from './ErrorInterceptor';
 
 export const entrypoints = [
   CreateFeatureEntryPointImpl,
@@ -37,6 +37,6 @@ export const usecases = [
 export const interceptors = [
   {
     provide: APP_INTERCEPTOR,
-    useClass: HttpExceptionInterceptor,
+    useClass: ErrorInterceptor,
   },
 ];
