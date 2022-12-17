@@ -1,10 +1,12 @@
 import { Feature } from 'src/domain/entity/Feature';
 import { CreateFeatureRequestDto } from '../entrypoint/dto/CreateFeatureRequestDto';
-import { UUIDImpl } from '../adapter/implementation/uuid';
+import { UUID } from '../adapter/uuid';
 
 export class CreateFeatureMapper {
-  static async toEntity(dto: CreateFeatureRequestDto): Promise<Feature> {
-    const uuid = new UUIDImpl();
+  static async toEntity(
+    dto: CreateFeatureRequestDto,
+    uuid: UUID,
+  ): Promise<Feature> {
     const date = new Date();
     return {
       id: await uuid.execute(),

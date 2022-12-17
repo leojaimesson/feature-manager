@@ -4,6 +4,7 @@ import { CreateFeatureUsecaseImpl } from '../../usecase/CreateFeatureUsecase';
 import { CreateFeatureRequestDto } from '../dto/CreateFeatureRequestDto';
 import { CreateFeatureMapper } from '../../mapper/CreateFeatureMapper';
 import { CreateFeatureEntryPoint } from '../CreateFeatureEntryPoint';
+import { UUIDImpl } from 'src/application/adapter/implementation/uuid';
 
 @Controller()
 export class CreateFeatureEntryPointImpl implements CreateFeatureEntryPoint {
@@ -15,7 +16,7 @@ export class CreateFeatureEntryPointImpl implements CreateFeatureEntryPoint {
   @Post('features')
   async execute(@Body() feature: CreateFeatureRequestDto): Promise<void> {
     await this.createFeatureUsecase.execute(
-      await CreateFeatureMapper.toEntity(feature),
+      await CreateFeatureMapper.toEntity(feature, new UUIDImpl()),
       feature.projectId,
     );
   }

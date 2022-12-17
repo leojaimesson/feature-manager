@@ -4,6 +4,7 @@ import { CreateProjectUsecaseImpl } from '../../usecase/CreateProjectUsecase';
 import { CreateProjectRequestDto } from '../dto/CreateProjectRequestDto';
 import { CreateProjectMapper } from '../../mapper/CreateProjectMapper';
 import { CreateProjectEntryPoint } from '../CreateProjectEntryPoint';
+import { UUIDImpl } from 'src/application/adapter/implementation/uuid';
 
 @Controller()
 export class CreateProjectEntryPointImpl implements CreateProjectEntryPoint {
@@ -15,7 +16,7 @@ export class CreateProjectEntryPointImpl implements CreateProjectEntryPoint {
   @Post('projects')
   async execute(@Body() project: CreateProjectRequestDto): Promise<void> {
     await this.createProjectUsecase.execute(
-      await CreateProjectMapper.toEntity(project),
+      await CreateProjectMapper.toEntity(project, new UUIDImpl()),
     );
   }
 }
