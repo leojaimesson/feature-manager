@@ -4,14 +4,10 @@ Content-Type: application/json
 {
     "name": "TEST_FLAG_2",
     "description": "description",
-    "enable": true,
+    "enable": "true2",
     "projectId": "5deb4616-13dd-4e3a-a38f-1f911efe83c5"
 }
 ###
 
-GET http://localhost:3000/features
-Content-Type: application/json
-###
-
-GET http://localhost:3000/projects/5deb4616-13dd-4e3a-a38f-1f911efe83c5/features
+GET http://localhost:3000/projects/957c70f3-a438-4dc8-b22a-219d14b22e79/features
 Content-Type: application/json

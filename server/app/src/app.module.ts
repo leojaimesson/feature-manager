@@ -3,12 +3,11 @@ import {
   dataproviders,
   entrypoints,
   interceptors,
-  usecases,
-} from './application/config/NestDI';
+} from './infrastructure/nestjs/NestDI';
 
 @Module({
   imports: [],
   controllers: [...entrypoints],
-  providers: [...dataproviders, ...usecases, ...interceptors],
+  providers: [...dataproviders, ...interceptors],
 })
 export class AppModule {}
