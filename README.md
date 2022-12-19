@@ -1,1 +1,1 @@
-# resource-manager
+# feature-manager
