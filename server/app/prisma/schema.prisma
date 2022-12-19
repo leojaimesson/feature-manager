@@ -17,6 +17,8 @@ model Project {
   createdAt   DateTime
   updatedAt   DateTime
   features    Feature[]
+
+  @@map("projects")
 }
 
 model Feature {
@@ -28,4 +30,6 @@ model Feature {
   updatedAt   DateTime
   Project     Project? @relation(fields: [projectId], references: [id])
   projectId   String?
+
+  @@map("features")
 }
