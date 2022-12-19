@@ -4,7 +4,7 @@ import { Feature } from 'src/domain/models/Feature';
 import { PrismaService } from '../prisma/PrismaService';
 
 @Injectable()
-export class FeatureRepositoryPrisma implements FeatureRepository {
+export class FeatureRepositorySQL implements FeatureRepository {
   constructor(private readonly prismaService: PrismaService) {}
 
   async create(feature: Feature, projectId: string): Promise<void> {

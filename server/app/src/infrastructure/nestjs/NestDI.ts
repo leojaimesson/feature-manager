@@ -5,8 +5,8 @@ import { CreateFeatureEntryPointNestJS } from '../http/nestjs/CreateFeatureEntry
 import { CreateProjectEntryPointNestJs } from '../http/nestjs/CreateProjectEntryPoint';
 import { RetrieveFeaturesByProjectEntryPointNestJs } from '../http/nestjs/RetrieveFeaturesByProjectEntryPoint';
 import { RetrieveProjectsEntryPointNestJs } from '../http/nestjs/RetrieveProjectsEntryPoint';
-import { FeatureRepositoryPrisma } from '../dataproviders/FeatureRepositoryPrisma';
-import { ProjectRepositoryPrisma } from '../dataproviders/ProjectRepositoryPrisma';
+import { FeatureRepositorySQL } from '../dataproviders/FeatureRepositorySQL';
+import { ProjectRepositorySQL } from '../dataproviders/ProjectRepositorySQL';
 
 export const entrypoints = [
   CreateFeatureEntryPointNestJS,
@@ -16,8 +16,8 @@ export const entrypoints = [
 ];
 export const dataproviders = [
   PrismaService,
-  FeatureRepositoryPrisma,
-  ProjectRepositoryPrisma,
+  FeatureRepositorySQL,
+  ProjectRepositorySQL,
 ];
 
 export const interceptors = [

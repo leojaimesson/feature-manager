@@ -1,13 +1,13 @@
 import { Controller, Get, Inject, Param } from '@nestjs/common';
 import { RetrieveFeaturesByProjectResponseDto } from '../../../entrypoints/dto/RetrieveFeaturesByProjectResponseDto';
-import { FeatureRepositoryPrisma } from 'src/infrastructure/dataproviders/FeatureRepositoryPrisma';
+import { FeatureRepositorySQL } from 'src/infrastructure/dataproviders/FeatureRepositorySQL';
 import { FeatureRepository } from 'src/domain/dataproviders/FeatureRepository';
 import { RetrieveFeaturesByProjectEntryPoint } from 'src/entrypoints/RetrieveFeaturesByProjectEntryPoint';
 
 @Controller()
 export class RetrieveFeaturesByProjectEntryPointNestJs {
   constructor(
-    @Inject(FeatureRepositoryPrisma)
+    @Inject(FeatureRepositorySQL)
     private readonly repository: FeatureRepository,
   ) {}
 

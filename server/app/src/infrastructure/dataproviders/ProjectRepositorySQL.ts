@@ -4,7 +4,7 @@ import { Project } from 'src/domain/models/Project';
 import { PrismaService } from '../prisma/PrismaService';
 
 @Injectable()
-export class ProjectRepositoryPrisma implements ProjectRepository {
+export class ProjectRepositorySQL implements ProjectRepository {
   constructor(private readonly prismaService: PrismaService) {}
 
   async create(project: Project): Promise<void> {

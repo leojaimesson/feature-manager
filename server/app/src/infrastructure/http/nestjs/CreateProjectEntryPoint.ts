@@ -1,13 +1,13 @@
 import { Body, Controller, Inject, Post } from '@nestjs/common';
 import { CreateProjectRequestDto } from '../../../entrypoints/dto/CreateProjectRequestDto';
 import { CreateProjectEntryPoint } from '../../../entrypoints/CreateProjectEntryPoint';
-import { ProjectRepositoryPrisma } from 'src/infrastructure/dataproviders/ProjectRepositoryPrisma';
+import { ProjectRepositorySQL } from 'src/infrastructure/dataproviders/ProjectRepositorySQL';
 import { ProjectRepository } from 'src/domain/dataproviders/ProjectRepository';
 
 @Controller()
 export class CreateProjectEntryPointNestJs {
   constructor(
-    @Inject(ProjectRepositoryPrisma)
+    @Inject(ProjectRepositorySQL)
     private readonly repository: ProjectRepository,
   ) {}
 
