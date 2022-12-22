@@ -7,12 +7,14 @@ import { RetrieveFeaturesByProjectEntryPointNestJs } from '../http/nestjs/Retrie
 import { RetrieveProjectsEntryPointNestJs } from '../http/nestjs/RetrieveProjectsEntryPoint';
 import { FeatureRepositorySQL } from '../dataproviders/FeatureRepositorySQL';
 import { ProjectRepositorySQL } from '../dataproviders/ProjectRepositorySQL';
+import { ChangeFeatureFlagEntryPointNestJS } from '../http/nestjs/ChangeFeatureFlagEntryPoint';
 
 export const entrypoints = [
   CreateFeatureEntryPointNestJS,
   CreateProjectEntryPointNestJs,
   RetrieveFeaturesByProjectEntryPointNestJs,
   RetrieveProjectsEntryPointNestJs,
+  ChangeFeatureFlagEntryPointNestJS,
 ];
 export const dataproviders = [
   PrismaService,
