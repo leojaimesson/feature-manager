@@ -50,7 +50,7 @@ export class FeatureRepositorySQL implements FeatureRepository {
     if (feature.description) {
       draftData.description = feature.description;
     }
-    if (feature.enable) {
+    if (typeof feature.enable === 'boolean') {
       draftData.enable = feature.enable;
     }
     draftData.updatedAt = new Date();
