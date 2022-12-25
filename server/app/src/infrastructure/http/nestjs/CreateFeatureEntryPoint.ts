@@ -3,7 +3,9 @@ import { CreateFeatureRequestDto } from '../../../entrypoints/dto/CreateFeatureR
 import { FeatureRepository } from 'src/domain/dataproviders/FeatureRepository';
 import { FeatureRepositorySQL } from 'src/infrastructure/dataproviders/FeatureRepositorySQL';
 import { CreateFeatureEntryPoint } from 'src/entrypoints/CreateFeatureEntryPoint';
+import { API_PATHS, API_VERSION } from '../Api';
 
+const PATH = API_PATHS[API_VERSION.V1].CREATE_FEATURE_ENTRYPOINT.PATH;
 @Controller()
 export class CreateFeatureEntryPointNestJS {
   constructor(
@@ -11,7 +13,7 @@ export class CreateFeatureEntryPointNestJS {
     private readonly featureRepository: FeatureRepository,
   ) {}
 
-  @Post('features')
+  @Post(PATH)
   async execute(@Body() body: CreateFeatureRequestDto): Promise<void> {
     const entrypoint = new CreateFeatureEntryPoint(this.featureRepository);
     await entrypoint.execute(body);

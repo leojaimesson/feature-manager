@@ -3,6 +3,12 @@ import { FeatureRepository } from 'src/domain/dataproviders/FeatureRepository';
 import { FeatureRepositorySQL } from 'src/infrastructure/dataproviders/FeatureRepositorySQL';
 import { ChangeFeatureFlagRequestDto } from 'src/entrypoints/dto/ChangeFeatureFlagRequestDto';
 import { ChangeFeatureFlagEntryPoint } from 'src/entrypoints/ChangeFeatureFlagEntryPoint';
+import { API_PATHS, API_VERSION } from '../Api';
+
+const PATH = API_PATHS[API_VERSION.V1].CHANGE_FEATURE_FLAG_ENTRYPOINT.PATH;
+
+const FEATURE_ID_PARAM =
+  API_PATHS[API_VERSION.V1].CHANGE_FEATURE_FLAG_ENTRYPOINT.PARAMS.FEATURE_ID;
 
 @Controller()
 export class ChangeFeatureFlagEntryPointNestJS {
@@ -11,10 +17,11 @@ export class ChangeFeatureFlagEntryPointNestJS {
     private readonly featureRepository: FeatureRepository,
   ) {}
 
-  @Put('features/:featureId/change-flag')
+  @Put(PATH)
   async execute(
     @Body() body: ChangeFeatureFlagRequestDto,
-    @Param('featureId') featureId: string,
+    @Param(FEATURE_ID_PARAM)
+    featureId: string,
   ): Promise<void> {
     const entrypoint = new ChangeFeatureFlagEntryPoint(this.featureRepository);
     await entrypoint.execute(body, featureId);
