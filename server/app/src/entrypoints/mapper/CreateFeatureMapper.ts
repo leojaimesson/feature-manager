@@ -12,7 +12,7 @@ export class CreateFeatureMapper {
       .setId(await uuid.execute())
       .setName(dto.name)
       .setDescription(dto.description)
-      .setEnable(dto.enable)
+      .setEnable(false)
       .setCreateAt(date)
       .setUpdatedAt(date);
   }
