@@ -7,6 +7,7 @@ export class RetrieveProjectsMapper {
   ): Promise<RetrieveProjectsResponseDto[]> {
     return projects.map(
       (project): RetrieveProjectsResponseDto => ({
+        id: project.id,
         name: project.name,
         description: project.description,
       }),
