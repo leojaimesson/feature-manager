@@ -7,10 +7,15 @@ import {
   HttpStatus,
 } from '@nestjs/common';
 import { catchError, Observable } from 'rxjs';
+import { EmptyStringError } from 'src/domain/errors/EmptyStringError';
 import { InvalidParamError } from 'src/domain/errors/InvalidParamError';
 import { MissingParamError } from 'src/domain/errors/MissingParamError';
 
-const BAD_REQUEST_ERRORS = [MissingParamError, InvalidParamError];
+const BAD_REQUEST_ERRORS = [
+  MissingParamError,
+  InvalidParamError,
+  EmptyStringError,
+];
 
 @Injectable()
 export class ErrorInterceptor implements NestInterceptor {

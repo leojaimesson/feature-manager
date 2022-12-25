@@ -1,3 +1,4 @@
+import { EmptyStringError } from '../errors/EmptyStringError';
 import { InvalidParamError } from '../errors/InvalidParamError';
 import { MissingParamError } from '../errors/MissingParamError';
 
@@ -18,6 +19,9 @@ export class Feature {
     if (name === undefined) {
       throw new MissingParamError('name');
     }
+    if (name === '') {
+      throw new EmptyStringError('name');
+    }
     this.name = name;
     return this;
   }
@@ -25,6 +29,9 @@ export class Feature {
   setDescription(description: string) {
     if (description === undefined) {
       throw new MissingParamError('description');
+    }
+    if (description === '') {
+      throw new EmptyStringError('description');
     }
     this.description = description;
     return this;
