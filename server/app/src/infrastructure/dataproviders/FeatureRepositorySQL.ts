@@ -72,6 +72,15 @@ export class FeatureRepositorySQL implements FeatureRepository {
       .setUpdatedAt(updateFeature.updatedAt);
   }
 
+  async exists(featureId: string): Promise<boolean> {
+    const data = await this.prismaService.feature.findUnique({
+      where: {
+        id: featureId,
+      },
+    });
+    return Boolean(data);
+  }
+
   async listByProject(projectId: string): Promise<Feature[]> {
     const listData = await this.prismaService.feature.findMany({
       where: {

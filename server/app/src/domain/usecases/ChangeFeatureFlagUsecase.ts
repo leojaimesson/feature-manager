@@ -10,7 +10,7 @@ export class ChangeFeatureFlagUsecase {
     if (!featureId) {
       throw new MissingParamError('featureId');
     }
-    if (!(await this.repository.findById(featureId))) {
+    if (!(await this.repository.exists(featureId))) {
       throw new EntityNotFoundError(`feature with id ${featureId} not found`);
     }
     const feature = new Feature().setId(featureId).setEnable(enable);
