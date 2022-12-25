@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { FeatureRepository } from 'src/domain/dataproviders/FeatureRepository';
+import { EntityNotFoundError } from 'src/domain/errors/EntityNotFoundError';
 import { Feature } from 'src/domain/models/Feature';
 import { PrismaService } from '../prisma/PrismaService';
 
@@ -29,6 +30,9 @@ export class FeatureRepositorySQL implements FeatureRepository {
         id: featureId,
       },
     });
+    if (!data) {
+      throw new EntityNotFoundError(`feature with id ${featureId} not found`);
+    }
     return new Feature()
       .setId(data.id)
       .setName(data.name)
