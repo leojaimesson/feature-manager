@@ -12,8 +12,13 @@ services:
     build: ./app
     command: /bin/sh -c "/entrypoint.sh"
     restart: always
+    environment:
+      SERVER_PORT: 4000
+      DATABASE_URL: mysql://root:root@db:3306/feature-manager
+    env_file:
+      - ./app/.env
     ports:
-      - "5001:5001"
+      - "4000:4000"
     volumes:
       - /usr/src/app
     networks:
