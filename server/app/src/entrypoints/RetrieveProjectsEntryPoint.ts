@@ -1,5 +1,5 @@
 import { ProjectRepository } from 'src/domain/dataproviders/ProjectRepository';
-import { RetrieveProjectsUsecase } from 'src/domain/usecases/RetrieveProjectsUsecase';
+import { RetrieveProjectsUsecase } from 'src/application/usecases/RetrieveProjectsUsecase';
 import { RetrieveProjectsResponseDto } from './dto/RetrieveProjectsResponseDto';
 import { RetrieveProjectsMapper } from './mapper/RetrieveProjectsMapper';
 

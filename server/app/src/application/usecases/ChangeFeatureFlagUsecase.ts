@@ -1,7 +1,7 @@
-import { FeatureRepository } from '../dataproviders/FeatureRepository';
-import { EntityNotFoundError } from '../errors/EntityNotFoundError';
-import { MissingParamError } from '../errors/MissingParamError';
-import { Feature } from '../models/Feature';
+import { FeatureRepository } from '../../domain/dataproviders/FeatureRepository';
+import { EntityNotFoundError } from '../../domain/errors/EntityNotFoundError';
+import { MissingParamError } from '../../domain/errors/MissingParamError';
+import { Feature } from '../../domain/models/Feature';
 
 export class ChangeFeatureFlagUsecase {
   constructor(private readonly repository: FeatureRepository) {}

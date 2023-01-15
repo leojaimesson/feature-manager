@@ -1,6 +1,6 @@
 import { UuidAdapter } from 'src/adapters/UuidAdapter';
 import { ProjectRepository } from 'src/domain/dataproviders/ProjectRepository';
-import { CreateProjectUsecase } from 'src/domain/usecases/CreateProjectUsecase';
+import { CreateProjectUsecase } from 'src/application/usecases/CreateProjectUsecase';
 import { CreateProjectRequestDto } from './dto/CreateProjectRequestDto';
 import { CreateProjectMapper } from './mapper/CreateProjectMapper';
 

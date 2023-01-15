@@ -1,6 +1,6 @@
 import { UuidAdapter } from 'src/adapters/UuidAdapter';
 import { FeatureRepository } from 'src/domain/dataproviders/FeatureRepository';
-import { CreateFeatureUsecase } from 'src/domain/usecases/CreateFeatureUsecase';
+import { CreateFeatureUsecase } from 'src/application/usecases/CreateFeatureUsecase';
 import { CreateFeatureRequestDto } from './dto/CreateFeatureRequestDto';
 import { CreateFeatureMapper } from './mapper/CreateFeatureMapper';
 

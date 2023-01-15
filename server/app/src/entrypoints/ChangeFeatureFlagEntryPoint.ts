@@ -1,5 +1,5 @@
 import { FeatureRepository } from 'src/domain/dataproviders/FeatureRepository';
-import { ChangeFeatureFlagUsecase } from 'src/domain/usecases/ChangeFeatureFlagUsecase';
+import { ChangeFeatureFlagUsecase } from 'src/application/usecases/ChangeFeatureFlagUsecase';
 import { ChangeFeatureFlagRequestDto } from './dto/ChangeFeatureFlagRequestDto';
 
 export class ChangeFeatureFlagEntryPoint {
