@@ -2,23 +2,23 @@ import { HttpClient } from "./interfaces/HttpClient";
 import axios from "axios";
 
 export class AxiosAdpter implements HttpClient {
-  async get(url: string): Promise<any> {
-    const response = await axios.get(url);
+  async get<T>(url: string): Promise<T> {
+    const response = await axios.get<T>(url);
     return response.data;
   }
 
-  async post(url: string, body: any): Promise<any> {
-    const response = await axios.post(url, body);
+  async post<T>(url: string, body: any): Promise<T> {
+    const response = await axios.post<T>(url, body);
     return response.data;
   }
 
-  async put(url: string, body: any): Promise<any> {
-    const response = await axios.put(url, body);
+  async put<T>(url: string, body: any): Promise<T> {
+    const response = await axios.put<T>(url, body);
     return response.data;
   }
 
-  async delete(url: string): Promise<any> {
-    const response = await axios.delete(url);
+  async delete<T>(url: string): Promise<T> {
+    const response = await axios.delete<T>(url);
     return response.data;
   }
 }
