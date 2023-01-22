@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { Paths } from "../../routes/Paths";
+import { Paths } from "../../../main/routes/Paths";
 import { RedirectLink } from "./NotFoundPageStyles";
 
 type NotFoundPageProps = {};

@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { makeNotFoundPageFactory } from "../../main/factories/pages/NotFoundPageFactory";
-import { makeProjectsPageFactory } from "../../main/factories/pages/ProjectsPageFactory";
+import { makeNotFoundPageFactory } from "../factories/pages/NotFoundPageFactory";
+import { makeProjectsPageFactory } from "../factories/pages/ProjectsPageFactory";
 import { Paths } from "./Paths";
 import { RedirectTo } from "./RedirectTo";
 
