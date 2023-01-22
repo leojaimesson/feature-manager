@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { makeNotFoundPageFactory } from "../../main/factories/pages/NotFoundPageFactory";
 import { makeProjectsPageFactory } from "../../main/factories/pages/ProjectsPageFactory";
 import { Paths } from "./Paths";
 import { RedirectTo } from "./RedirectTo";
@@ -11,6 +12,10 @@ const router = createBrowserRouter([
   {
     path: Paths.PROJECTS,
     element: makeProjectsPageFactory(),
+  },
+  {
+    path: Paths.NOT_FOUND,
+    element: makeNotFoundPageFactory(),
   },
 ]);
 
