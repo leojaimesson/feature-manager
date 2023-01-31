@@ -1,12 +1,9 @@
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
+import { retrieveProjectsEffect } from "../../../infrastructure/redux/projects/ProjectsEffects";
 import {
   selectLoading,
   selectProjects,
 } from "../../../infrastructure/redux/projects/ProjectsSelectors";
-import {
-  save as saveProjects,
-  loading as loadingProjects,
-} from "../../../infrastructure/redux/projects/ProjectsSlice";
 import { RetrieveProjectsUsecase } from "../../../usecases/RetrieveProjectsUsecase";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux/ReduxHook";
 
@@ -19,21 +16,13 @@ export function ProjectsPage({ retrieveProjectsUsecase }: ProjectsPageProps) {
   const projects = useAppSelector(selectProjects);
   const loading = useAppSelector(selectLoading);
 
-  const getProjects = useCallback(async () => {
-    dispatch(loadingProjects(true));
-    try {
-      const data = await retrieveProjectsUsecase.execute();
-      dispatch(saveProjects(data));
-    } catch (err) {
-      dispatch(loadingProjects(false));
-    } finally {
-      dispatch(loadingProjects(false));
-    }
-  }, [dispatch, loadingProjects, retrieveProjectsUsecase]);
-
   useEffect(() => {
-    getProjects();
-  }, [getProjects]);
+    dispatch(
+      retrieveProjectsEffect({
+        retrieveProjectsUsecase,
+      })
+    );
+  }, [dispatch, retrieveProjectsUsecase]);
 
   function renderProjects() {
     if (loading) {
